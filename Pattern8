@@ -1,0 +1,26 @@
+Enter no. of rows: 3
+1 2 3 
+2 3 4 
+3 4 5 
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter no. of rows: ";
+    cin>>n;
+
+    int row=1;
+    while(row<=n){
+        int value=row;
+        int col=1;
+        while(col<=n){
+            cout<<value<<" ";
+            value = value+1;
+            col = col+1;
+        }
+        cout<<endl;
+        row = row+1;
+    }
+}
