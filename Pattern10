@@ -1,0 +1,39 @@
+Enter no. of rows: 9
+123456789987654321
+12345678**87654321
+1234567****7654321
+123456******654321
+12345********54321
+1234**********4321
+123************321
+12**************21
+1****************1
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter no. of rows: ";
+    cin>>n;
+
+    int row=1;
+    while(row<=n){
+        int col=1;
+        while(col<=n-row+1){
+            cout<<col;
+            col = col+1;
+        }
+        int i=row;
+        while(i-1){
+            cout<<"**";
+            i = i-1;
+        }
+        while(col-1){
+            cout<<col-1;
+            col = col-1;
+        }
+        cout<<endl;
+        row = row+1;
+    }
+}
