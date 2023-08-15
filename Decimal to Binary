@@ -1,0 +1,25 @@
+Enter the decimal number: 10
+Binary Equivalent is: 1010
+
+Enter the decimal number: 5
+Binary Equivalent is: 101
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter the decimal number: ";
+    cin>>n;
+    
+    int ans = 0, i=0;
+    while(n!=0){
+        int bit = n&1;
+        n = n>>1;
+
+        ans = (bit * pow(10,i)) + ans;
+        i++;
+    }
+    cout<<"Binary Equivalent is: "<<ans;
+}
