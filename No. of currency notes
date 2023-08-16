@@ -1,0 +1,27 @@
+Enter the amount: 6547
+100 Rupees notes: 65
+50 Rupees notes: 0
+20 Rupees notes: 2
+1 Rupee note: 7
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter the amount: ";
+    cin>>n;
+
+    switch(1){
+        case 1: cout<<"100 Rupees notes: "<< n/100 <<endl;
+                n = n%100;
+
+        case 2: cout<<"50 Rupees notes: "<< n/50 <<endl;
+                n = n%50;
+
+        case 3: cout<<"20 Rupees notes: "<< n/20 <<endl;
+                n = n%20;
+
+        case 4: cout<<"1 Rupee note: "<< n/1 <<endl;
+    }
+}
