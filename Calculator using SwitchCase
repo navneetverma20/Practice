@@ -1,0 +1,73 @@
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: +
+14
+
+
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: -
+4
+
+
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: *
+45
+
+
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: /
+1
+
+
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: %
+4
+
+
+Enter the value of a: 9
+Enter the value of b: 5
+Enter the operation to perform: add 
+Enter a valid operation
+
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a;
+    cout<<"Enter the value of a: ";
+    cin>>a;
+
+    int b;
+    cout<<"Enter the value of b: ";
+    cin>>b;
+
+    char op;
+    cout<<"Enter the operation to perform: ";
+    cin>>op;
+
+    switch(op){
+        case '+': cout<<a+b;
+                    break;
+
+        case '-': cout<<a-b;
+                    break;
+
+        case '*': cout<<a*b;
+                    break;
+
+        case '/': cout<<a/b;
+                    break;
+
+        case '%': cout<<a%b;
+                    break;
+
+        default : cout<<"Enter a valid operation";
+    }
+
+}
