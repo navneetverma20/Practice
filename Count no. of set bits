@@ -1,0 +1,28 @@
+Enter the value of a & b: 7 10
+Total no. of set bits is: 5
+
+Enter the value of a & b: 2 3
+Total no. of set bits is: 3
+
+
+#include<iostream>
+using namespace std;
+
+int setBits(int a){
+    int count=0;
+    while(a != 0){
+        if(a&1){
+            count++;
+        }
+        a = a>>1;
+    }
+    return count;
+}
+
+int main(){
+    int a, b;
+    cout<<"Enter the value of a & b: ";
+    cin>> a >> b;
+
+    cout<<"Total no. of set bits is: "<< setBits(a) + setBits(b);
+}
