@@ -1,0 +1,41 @@
+Enter the value of n: 5
+The nth term is: 3
+
+Enter the value of n: 8
+The nth term is: 13
+
+Enter the value of n: 9
+The nth term is: 21
+
+
+#include<iostream>
+using namespace std;
+
+int fib(int x){
+    int a = 0;
+    int b = 1;
+    int ans;
+
+    if(x == 1){
+        return 0;
+    }
+
+    if(x == 2){
+        return 1;
+    }
+
+    for(int i=3; i<=x; i++){
+        ans = a+b;
+        a = b;
+        b = ans;
+    }
+    return ans;
+}
+
+int main(){
+    int n;
+    cout<<"Enter the value of n: ";
+    cin>>n;
+
+    cout<<"The nth term is: "<< fib(n);
+}
