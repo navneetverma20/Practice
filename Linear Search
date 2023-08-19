@@ -1,0 +1,47 @@
+Enter the size of array: 6
+Enter the elements: 66 69 54 55 23 45
+Enter the element to find: 90
+Element is absent
+
+Enter the size of array: 6
+Enter the elements: 66 69 54 55 23 45
+Enter the element to find: 54
+Element is present
+
+
+#include<iostream>
+using namespace std;
+
+bool linearSearch(int arr[], int size, int key){
+    for(int i=0; i<size; i++){
+        if(arr[i] == key){
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int main(){
+    int array[30];
+
+    int n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++){
+        cin>>array[i];
+    }
+
+    int key;
+    cout<<"Enter the element to find: ";
+    cin>>key;
+
+    if(linearSearch(array, n, key)){
+        cout<<"Element is present";
+    }
+    else{
+        cout<<"Element is absent";
+    }
+
+}
