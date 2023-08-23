@@ -1,0 +1,38 @@
+Enter the size of the array: 5
+Enter the elements: 1 2 3 4 5
+Swapped Array is: 2 1 4 3 5 
+
+Enter the size of the array: 6
+Enter the elements: 1 2 3 4 5 6
+Swapped Array is: 2 1 4 3 6 5 
+
+#include<iostream>
+using namespace std;
+
+void swapArray(int array[], int size){
+    for(int i=0; i+1<size; i+=2){
+        swap(array[i],array[i+1]);
+    }
+}
+
+void printArray(int array[], int size){
+    for(int i=0; i<size; i++){
+        cout<<array[i]<<" ";
+    }
+}
+
+int main(){
+    int n;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+
+    int arr[30];
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    cout<<"Swapped Array is: ";
+    swapArray(arr,n);
+    printArray(arr,n);
+}
