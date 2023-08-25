@@ -1,0 +1,101 @@
+Enter the size of the array: 15              
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5 
+Enter the key: 2
+First occurrence is at index: 1
+Last occurrence is at index: 4
+
+Enter the size of the array: 15
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5
+Enter the key: 3
+First occurrence is at index: 5
+Last occurrence is at index: 9
+
+Enter the size of the array: 15
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5
+Enter the key: 4
+First occurrence is at index: 10
+Last occurrence is at index: 13
+
+Enter the size of the array: 15
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5
+Enter the key: 1
+First occurrence is at index: 0
+Last occurrence is at index: 0
+
+Enter the size of the array: 15
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5
+Enter the key: 5
+First occurrence is at index: 14
+Last occurrence is at index: 14
+
+Enter the size of the array: 15
+Enter the elements: 1 2 2 2 2 3 3 3 3 3 4 4 4 4 5
+Enter the key: 56
+First occurrence is at index: -1
+Last occurrence is at index: -1
+
+#include<iostream>
+using namespace std;
+
+int firstOcc(int array[], int size, int key){
+    int start=0;
+    int end=size-1;
+    int mid=start+(end-start)/2;
+    int ans=-1;
+
+    while(start<=end){
+        if(key==array[mid]){
+            end=mid-1;
+            ans=mid;
+        }
+        else if(key>array[mid]){
+            start=mid+1;
+        }
+        else{
+            end=mid-1;
+        }
+        mid=start+(end-start)/2;
+    }
+    return ans;
+}
+
+int lastOcc(int array[], int size, int key){
+    int start=0;
+    int end=size-1;
+    int mid=start+(end-start)/2;
+    int ans=-1;
+
+    while(start<=end){
+        if(key==array[mid]){
+            start=mid+1;
+            ans=mid;
+        }
+        else if(key>array[mid]){
+            start=mid+1;
+        }
+        else{
+            end=mid-1;
+        }
+        mid=start+(end-start)/2;
+    }
+    return ans;
+}
+
+int main(){
+    int n;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+
+    int arr[40];
+    cout<<"Enter the elements: ";
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    int key;
+    cout<<"Enter the key: ";
+    cin>>key;
+
+    cout<<"First occurrence is at index: "<< firstOcc(arr, n, key)<< endl;
+    cout<<"Last occurrence is at index: "<< lastOcc(arr, n, key);
+}
