@@ -1,0 +1,33 @@
+INPUT: 67 23 54 12 65 87 90 10 33
+
+OUTPUT: 10 12 23 33 54 65 67 87 90
+
+#include <iostream>
+using namespace std;
+
+void bubbleSort(int array[], int size){
+    for(int i=0; i<size-1; i++){
+        // i is for rounds and rounds for n elements will be n-1
+        bool swapped = false;
+        for(int j=0; j<size-i-1; j++){
+        // j is for comparing elements with its neighbour
+            if(array[j] > array[j+1]){
+                swap(array[j], array[j+1]);
+                swapped = true;
+            }
+        }
+        if(swapped == false){
+            break;
+        }
+    }
+    
+    for(int i=0; i<size; i++){
+        cout<<array[i]<<" ";
+    }
+}
+
+int main(){
+    int arr[9] = {67, 23, 54, 12, 65, 87, 90, 10, 33};
+
+    bubbleSort(arr, 9);
+}
