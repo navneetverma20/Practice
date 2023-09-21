@@ -1,3 +1,7 @@
+INPUT: 23 3 98 12 54 6 36 80 65 72
+OUTPUT: 3 6 12 23 36 54 65 72 80 98
+
+
 #include<iostream>
 using namespace std;
 
