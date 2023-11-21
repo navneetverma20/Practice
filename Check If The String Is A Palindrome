@@ -1,0 +1,37 @@
+// Have to consider only alphabets and numerics (ie. no special characters and whitespaces).
+// Also its not case sensitive ie. uppercase and lowercase have to be treated the same (Eg. 'A' and 'a' are same).
+
+INPUT: 
+codingninjassajNiNgNidoc
+5?36@6?35
+aaBBa@
+
+OUTPUT:
+Yes
+Yes
+No
+
+CODE:
+#include <bits/stdc++.h> 
+bool checkPalindrome(string s)
+{
+    string temp;
+    for(int i=0; i<s.size(); i++){
+        if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z') || (s[i]>='0' && s[i]<='9')){
+            temp.push_back(s[i]);
+        }
+    }
+    transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+    int start=0;
+    int end=temp.size()-1;
+    while(start<end){
+        if(temp[start] != temp[end]){
+            return 0;
+        }
+        else{
+            start++;
+            end--;
+        }
+    }
+    return 1;
+}
