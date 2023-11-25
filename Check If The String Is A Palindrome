@@ -1,5 +1,6 @@
 // Have to consider only alphabets and numerics (ie. no special characters and whitespaces).
 // Also its not case sensitive ie. uppercase and lowercase have to be treated the same (Eg. 'A' and 'a' are same).
+   Thus, we have to convert all uppercase to lower or all lowercase to upper to make them same.
 
 INPUT: 
 codingninjassajNiNgNidoc
