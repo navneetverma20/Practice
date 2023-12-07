@@ -1,0 +1,52 @@
+// In Code Studio as Reverse Words in a String II
+
+INPUT:-
+when all else fails reboot
+java is to javascript what a car is to carpet
+no code has zero defects
+whitespace is never white
+
+OUTPUT:-
+reboot fails else all when
+carpet to is car a what javascript to is java
+defects zero has code no
+white never is whitespace
+
+
+CODE:-
+string reverseOrderWords(string str) {
+    int start=0;
+    int end=str.size()-1;
+    while(start<end){
+        swap(str.at(start),str.at(end));
+        start++;
+        end--;
+    }
+    start=0;
+    end=0;
+    int temp;
+    while(end<str.size()-1){
+        end++;
+        if(str.at(end)==' '){
+            temp=end;
+            while (start < end - 1) {
+                swap(str.at(start), str.at(end - 1));
+                start++;
+                end--;
+            }
+            start=temp+1;
+            end=start;
+        }
+        if(end==str.size()-1){
+            temp=end;
+            while (start < end) {
+                swap(str.at(start), str.at(end));
+                start++;
+                end--;
+            }
+            start=temp+1;
+            end=start;
+        }
+    }
+    return str;
+}
