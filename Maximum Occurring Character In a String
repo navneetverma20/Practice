@@ -1,0 +1,39 @@
+// GFG Question by the name Maximum Occuring Character
+// Does not read spaces and all alphabets are in lowercase.
+// If two alphabets ocuur same no.of times then returns the character that comes first alphabetically.
+
+INPUT:-
+navneetkumarverma
+testsample
+output
+
+OUTPUT:-
+a
+e
+t
+
+CODE:-
+char getMaxOccuringChar(string str)
+    {
+        int currcount;
+        int maxcount=0;
+        int ansindex=0;
+        for(int i=0; i<str.size(); i++){
+            currcount=1;
+            for(int j=i+1; j<str.size(); j++){
+                if(str.at(j)==str.at(i)){
+                    currcount++;
+                }
+            }
+            if(currcount>maxcount){
+                maxcount=currcount;
+                ansindex=i;
+            }
+            else if(currcount==maxcount){
+                if(str.at(i)<str.at(ansindex)){
+                    ansindex=i;
+                }
+            }
+        }
+        return str.at(ansindex);
+    }
