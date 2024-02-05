@@ -1,0 +1,71 @@
+Enter no. of rows: 4
+Enter no. of columns for Row 1: 4
+Enter no. of columns for Row 2: 2
+Enter no. of columns for Row 3: 5
+Enter no. of columns for Row 4: 3
+Enter the values: 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+The Jagged Array is:--
+1 2 3 4 
+5 6 
+7 8 9 10 11 
+12 13 14
+
+Enter no. of rows: 5
+Enter no. of columns for Row 1: 3
+Enter no. of columns for Row 2: 1
+Enter no. of columns for Row 3: 5
+Enter no. of columns for Row 4: 2
+Enter no. of columns for Row 5: 4
+Enter the values: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+The Jagged Array is:--
+1 2 3 
+4 
+5 6 7 8 9 
+10 11 
+12 13 14 15
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+int main(){
+    int row;
+    cout<<"Enter no. of rows: ";
+    cin>>row;
+
+    int* col = new int[row];
+    for(int i=0; i<row; i++){
+        cout<<"Enter no. of columns for Row "<< i+1 <<": ";
+        cin>>col[i];
+    }
+
+// Creating Jagged Array
+    int** arr = new int*[row];
+    for(int i=0; i<row; i++){
+        arr[i] = new int[col[i]];
+    }
+
+// Taking input into Jagged Array
+    cout<<"Enter the values: ";
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col[i]; j++){
+           cin>>arr[i][j];
+        }
+    }
+
+// Displaying the Array
+    cout<<"The Jagged Array is:--"<<endl;
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col[i]; j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+// Releasing the Heap Memory
+    for(int i=0; i<row; i++){
+        delete[] arr[i];
+    }
+    delete[] arr;
+}
