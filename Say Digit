@@ -1,0 +1,35 @@
+Enter the no: 480109
+Four Eight Zero One Zero Nine
+
+Enter the no: 1023850
+One Zero Two Three Eight Five Zero
+
+Enter the no: 201
+Two Zero One
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+void sayDigit(int n, string array[]){
+    if(n == 0){
+        return;
+    }
+
+    int digit = n%10;
+    n = n/10;
+
+    sayDigit(n,array);
+
+    cout<< array[digit]<<" ";
+}
+
+int main(){
+   int n;
+   cout<<"Enter the no: ";
+   cin>>n;
+   string arr[10]={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+
+   sayDigit(n,arr);
+}
