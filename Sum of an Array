@@ -1,0 +1,64 @@
+Enter the size of array: 5
+Enter the values: 1 2 3 4 5
+Sum of the array is: 15
+
+Enter the size of array: 1
+Enter the values: 5
+Sum of the array is: 5
+
+Enter the size of array: 5
+Enter the values: 1 0 5 4 6
+Sum of the array is: 16
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+int sumArray(int arr[], int size, int sum){
+    if(size == 0){
+        return sum;
+    }
+    sum = sum + arr[0];
+    return sumArray(arr+1,size-1,sum);
+}
+
+int main(){
+   int arr[50], n, sum=0;
+   cout<<"Enter the size of array: ";
+   cin>>n;
+
+   cout<<"Enter the values: ";
+   for(int i=0; i<n; i++){
+    cin>>arr[i];
+   }
+   cout<<"Sum of the array is: " << sumArray(arr,n,sum);
+}
+
+OR
+
+#include<iostream>
+using namespace std;
+
+int sumArray(int arr[], int size){
+    if(size == 0){
+        return 0;
+    }
+    if(size == 1){
+        return arr[0];
+    }
+
+    return arr[0] + sumArray(arr+1,size-1);
+}
+
+int main(){
+   int arr[50], n;
+   cout<<"Enter the size of array: ";
+   cin>>n;
+
+   cout<<"Enter the values: ";
+   for(int i=0; i<n; i++){
+    cin>>arr[i];
+   }
+   cout<<"Sum of the array is: " << sumArray(arr,n);
+}
