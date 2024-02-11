@@ -1,0 +1,55 @@
+Enter the size of array: 5
+Enter the values: 1 2 3 4 5
+The array is Sorted.
+
+Enter the size of array: 5
+Enter the values: 5 4 3 2 1
+The array is Not Sorted.
+
+Enter the size of array: 1
+Enter the values: 4
+The array is Sorted.
+
+Enter the size of array: 2
+Enter the values: 3 7
+The array is Sorted.
+
+Enter the size of array: 2
+Enter the values: 8 1
+The array is Not Sorted.
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+bool isSorted(int arr[], int size){
+    if(size == 0 || size == 1){
+        return true;
+    }
+
+    if(arr[0] > arr[1]){
+        return false;
+    }
+
+    return isSorted(arr+1,size-1);
+
+}
+
+int main(){
+   int arr[50], n;
+   cout<<"Enter the size of array: ";
+   cin>>n;
+
+   cout<<"Enter the values: ";
+   for(int i=0; i<n; i++){
+    cin>>arr[i];
+   }
+
+   if(isSorted(arr,n)){
+    cout<<"The array is Sorted.";
+   }
+   else{
+    cout<<"The array is Not Sorted.";
+   }
+}
