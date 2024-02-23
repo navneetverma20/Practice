@@ -1,0 +1,42 @@
+Enter the size of array: 6
+Enter the elements of the array: 98 43 21 11 65 45
+Bubble Sorted Array is: 11 21 43 45 65 98
+
+Enter the size of array: 5
+Enter the elements of the array: 65 12 1 98 54 23
+Bubble Sorted Array is: 1 12 54 65 98
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+void bubbleSort(int arr[], int size){
+    if(size == 0 || size == 1){
+        return;
+    }
+    for(int i=0; i<size-1; i++){
+        if(arr[i] > arr[i+1]){
+            swap(arr[i],arr[i+1]);
+        }
+    }
+    bubbleSort(arr, size-1);
+}
+
+int main(){
+    int arr[50],n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    cout<<"Enter the elements of the array: ";
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    bubbleSort(arr,n);
+
+    cout<<"Bubble Sorted Array is: ";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}
