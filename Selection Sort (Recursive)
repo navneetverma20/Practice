@@ -1,0 +1,44 @@
+Enter the size of array: 5
+Enter the elements of the array: 66 21 10 5 32
+Selection Sorted Array is: 5 10 21 32 66
+
+Enter the size of array: 8
+Enter the elements of the array: 12 90 45 122 54 5 300 21
+Selection Sorted Array is: 5 12 21 45 54 90 122 300
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+void selectionSort(int arr[], int start, int size){
+    if(size == 0 || start == size-1){
+        return;
+    }
+    int minIndex = start;
+    for(int i=start+1; i<size; i++){
+        if(arr[i] < arr[minIndex]){
+            minIndex = i;
+        }
+    }
+    swap(arr[start],arr[minIndex]);
+    selectionSort(arr,start+1,size);
+}
+
+int main(){
+    int arr[50],n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    cout<<"Enter the elements of the array: ";
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    selectionSort(arr,0,n);
+
+    cout<<"Selection Sorted Array is: ";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}
