@@ -1,0 +1,60 @@
+// I have printed out the array after each round so as to better understand Insertion Sort.
+
+Enter the size of array: 10 
+Enter the elements of the array: 23 100 65 1 74 15 92 89 38 10
+23 100 65 1 74 15 92 89 38 10 
+23 65 100 1 74 15 92 89 38 10 
+1 23 65 100 74 15 92 89 38 10 
+1 23 65 74 100 15 92 89 38 10 
+1 15 23 65 74 100 92 89 38 10 
+1 15 23 65 74 92 100 89 38 10 
+1 15 23 65 74 89 92 100 38 10 
+1 15 23 38 65 74 89 92 100 10 
+1 10 15 23 38 65 74 89 92 100 
+Insertion Sorted Array is: 1 10 15 23 38 65 74 89 92 100
+
+
+CODE:--
+#include<iostream>
+using namespace std;
+
+void insertionSort(int array[], int start, int size){
+    if(start == size || size == 0){
+        return;
+    }
+    int temp = array[start];
+    for(int i=start-1; i>=0; i--){
+        if(array[i] > array[i+1]){
+            array[i+1]=array[i];
+            array[i]=temp;
+        }
+        else{
+            break;
+        }
+    }
+// Code for printing out the array after each round
+    for(int i=0; i<size; i++){
+        cout<<array[i]<<" ";
+    }
+    cout<<endl;
+// Printing out code ends.
+    insertionSort(array,start+1,size);
+}
+
+int main(){
+    int arr[50],n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+
+    cout<<"Enter the elements of the array: ";
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+
+    insertionSort(arr, 1, n);
+
+    cout<<"Insertion Sorted Array is: ";
+    for(int i=0; i<n; i++){
+        cout<<arr[i]<<" ";
+    }
+}
