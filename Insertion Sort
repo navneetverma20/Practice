@@ -1,3 +1,8 @@
+/* Starts from the second element from left, and then arranges the left side array
+   thus, forming two Sub-Arrays (one arranged and one not)
+   and then picks element one by one from the Unarranged Sub-Array
+   and inserts it to its correct postion in the Arranged (or say scanned) Sub-Array.
+*/
 INPUT: 23 3 98 12 54 6 36 80 65 72
 OUTPUT: 3 6 12 23 36 54 65 72 80 98
 
