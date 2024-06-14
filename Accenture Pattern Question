@@ -1,0 +1,33 @@
+OUTPUT:
+
+Enter the number N: 4
+4444333322221111
+444333222111
+44332211
+4321
+
+Enter the number N: 3
+333222111
+332211
+321
+
+
+CODE:
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter the number N: ";
+    cin>>n;
+
+    for(int k=n; k>=1; k--){
+        for(int i=n; i>=1; i--){
+            for(int j=k*i; j>k*(i-1); j--){
+                cout<<i;
+            }
+        }
+        cout<<endl;
+    }    
+}
