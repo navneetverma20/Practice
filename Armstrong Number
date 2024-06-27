@@ -1,0 +1,40 @@
+Enter the number: 153
+It is an Armstrong Number
+
+Enter the number: 407
+It is an Armstrong Number
+
+Enter the number: 9
+It is an Armstrong Number
+
+Enter the number: 54
+Not an Armstrong Number
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout<<"Enter the number: ";
+    cin>>n;
+
+    int totalDigit=0, temp;
+    temp = n;
+    while(temp!=0){
+        temp=temp/10;
+        totalDigit++;
+    }
+
+    int digit, temp2=n, sum=0;
+    while(temp2!=0){
+        digit=temp2%10;
+        sum = sum + pow(digit,totalDigit);
+        temp2=temp2/10;
+    }
+    if(n==sum){
+        cout<<"It is an Armstrong Number"<<endl;
+    }
+    else{
+        cout<<"Not an Armstrong Number"<<endl;
+    }
+}
